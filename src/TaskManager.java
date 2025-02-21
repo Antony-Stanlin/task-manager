@@ -4,10 +4,10 @@ import view.TaskView;
 
 public class TaskManager {
     public static void main(String[] args) throws Exception {
-        TaskView view=new TaskView();
-        TaskDAO taskDAO=new TaskDAO();
+        TaskView view = new TaskView();
+        TaskDAO taskDAO = new TaskDAO();
 
-        new TaskController(view,taskDAO).init();
+        new TaskController(view, taskDAO).init();
 
     }
 }

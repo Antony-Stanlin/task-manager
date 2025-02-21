@@ -7,9 +7,9 @@ import model.Task;
 
 public class TaskView {
 
-    private Scanner scanner=new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
-    public void showMessage(String message){
+    public void showMessage(String message) {
         System.out.println(message);
         System.out.println();
     }
@@ -27,9 +27,9 @@ public class TaskView {
         return scanner.nextInt();
     }
 
-    public Task getTask(){
+    public Task getTask() {
         scanner.nextLine();
-        Task task=new Task();
+        Task task = new Task();
         System.out.print("Enter the name of the task: ");
         task.setName(scanner.nextLine());
         System.out.print("Enter the priority: ");
@@ -39,16 +39,15 @@ public class TaskView {
         return task;
     }
 
-    public void displayTasks(Map<Integer,List<Task>> map){
-        if (map == null || map.isEmpty()) 
+    public void displayTasks(Map<Integer, List<Task>> map) {
+        if (map == null || map.isEmpty())
             System.out.println("All tasks were executed completely or no task exists");
         else
-            map.forEach((priority,tasks) -> {
-            System.out.println("Priority "+priority+":");
-            tasks.forEach(System.out::println);
+            map.forEach((priority, tasks) -> {
+                System.out.println("Priority " + priority + ":");
+                tasks.forEach(System.out::println);
             });
         System.out.println();
     }
 
-    
 }

@@ -7,21 +7,22 @@ public class Task implements Comparable<Task> {
     private int time;
     private int priority;
 
-    public Task(){}
+    public Task() {
+    }
 
-    public Task(int id,String name,int priority,int time){
-        this.id=id;
-        this.name=name;
-        this.priority=priority;
-        this.time=time;
+    public Task(int id, String name, int priority, int time) {
+        this.id = id;
+        this.name = name;
+        this.priority = priority;
+        this.time = time;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id){
-        this.id=id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,19 +50,18 @@ public class Task implements Comparable<Task> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return """
-        [ID: %d, Name: %s, Priority: %d, Time: %d mins]
-                """.formatted(id,name,priority,time);
+                [ID: %d, Name: %s, Priority: %d, Time: %d mins]
+                        """.formatted(id, name, priority, time);
     }
 
     @Override
-    public int compareTo(Task task){
-        if(task.getPriority()!=this.getPriority())
-            return Integer.compare(this.getPriority(),task.getPriority());
-        
-        return Integer.compare(this.getId(),task.getId());
-    }
+    public int compareTo(Task task) {
+        if (task.getPriority() != this.getPriority())
+            return Integer.compare(this.getPriority(), task.getPriority());
 
+        return Integer.compare(this.getId(), task.getId());
+    }
 
 }
