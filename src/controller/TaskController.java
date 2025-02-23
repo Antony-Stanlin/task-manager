@@ -24,6 +24,10 @@ public class TaskController {
                 switch (choice) {
                     case 1 -> {// 1.add task
                         Task task = view.getTask();
+                        if(task.getTime()<1 || task.getPriority()<1){
+                            view.showMessage("Task's Time/Priority should be greater that zero,please try again");
+                            break;
+                        }
                         model.addTask(task);
                         view.showMessage("Task Added: " + task);
                     }

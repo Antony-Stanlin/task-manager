@@ -137,13 +137,13 @@ public class TaskDAO {
 
     // 5.Calculate total time
     public int getTotalTime() throws SQLException {
-        String query = "select time from task where time>0";
+        String query = "select sum(time) time from task";
         int total = 0;
         try (Connection con = getConnection();
                 Statement stmt = con.prepareCall(query);
                 ResultSet rs = stmt.executeQuery(query)) {
-            while (rs.next())
-                total += rs.getInt("time");
+            if (rs.next())
+                total = rs.getInt("time");
         }
         return total;
     }
