@@ -16,8 +16,8 @@ import java.util.TreeMap;
 public class TaskDAO {
 
     private static final String URL = "jdbc:mysql://localhost:3306/task_manager";
-    private static final String USER = "root";
-    private static final String PASSWORD = "zoho123";
+    private static final String USER = "";
+    private static final String PASSWORD = "";
     private Queue<Task> taskList = new PriorityQueue();
 
     public TaskDAO() {
